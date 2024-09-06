@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body class="bg-gray-400 h-screen max-w-screen-2xl"
+    style="background-size: cover; background-image: url('background123.jpg')">
+
+    <div class="w-full h-full">
+        <nav class="w-full h-14 bg-gray-300 rounded-lg flex px-4 md:px-6 items-center justify-between">
+            <div class="font-extrabold text-blue-700 ml-20 flex items-center">
+                <img src="naukri_gnb_logo.svg" alt="">
+            </div>
+
+            <form action="/search-data1?id= <%= id %> " method="post">
+                <div class="flex bg-red-60">
+                    <input class="rounded-lg" name="searchtext" type="search">
+                    <div class="bg p-2 bg-indigo-700 text-white font-bold rounded-md">
+                        <button>Search</button>
+                    </div>
+                </div>
+            </form>
+        </nav>
+
+        <div class="mt-10 max-w-screen-2xl h-screen flex flex-wrap">
+
+            <% if(list.length>0){ %>
+                <% for (let i=0;i<list.length;i++) {%>
+                    <a href="/get-list-course?id=<%- list[i].ID %>" class="mb-8">
+                        <div
+                            class="ml-10 h-auto md:w-[240px] w-[200px] py-3 px-3 flex-col rounded-md bg-white hover:bg-slate-200">
+                            <div class="flex justify-center">
+                                <img class="h-30 w-30 rounded-lg" src="<%- list[i].img  %>" alt="">
+                            </div>
+                            <div class="flex flex-col">
+
+                                <div class="flex justify-center items-center">
+                                    <p class="flex font-extrabold"><%- list[i].course_name %></p>
+                                </div>
+
+                                <div class="">
+                                    <p class="font-semibold pt-3"><%- list[i].teacher %></p>
+                                    <p class="text-gray-700 pt-1"><%- list[i].info %></p>
+                                    <div class="flex items-center gap-3 mt-1">
+                                        <img class="w-9 h-9" src="AICTE_logo_128.png" alt="img">
+                                        <p class="font-extrabold text-red-600">AICTE</p>
+                                    </div>
+                                    <div class="flex items-center gap-2 my-4">
+                                        <img class="w-5 h-5" src="icon_week_32.png" alt="img">
+                                        <p class="text-xs"><%- list[i].date %></p>
+                                    </div>
+                                    <div class="ml-12 bg-blue-600 rounded-xl w-fit p-2 text-white">Buy Now</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <% } %>
+
+                        <% } else { %>
+                            Not Found!!
+                            <% } %>
+        </div>
+    </div>
+
+    <script>
+        function givepopup() {
+            alert("You have...");
+        }
+    </script>
+</body>
+
+</html>

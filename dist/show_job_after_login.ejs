@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body class="bg-gray-300 h-screen max-w-screen-2xl"
+    style="background-size: cover; background-image: url('background123.jpg')">
+
+    <!-- ------------------- -->
+
+    <nav class="w-full h-14 rounded-lg flex bg-gray-200 px-4 md:px-6 items-center">
+        <div class="font-extrabold text-blue-700 ml-20 flex items-center">
+            <img src="naukri_gnb_logo.svg" alt="">
+        </div>
+        <div class="text-black ml-10 flex">
+            <a href="/show_job_after_login" class="ml-8 font-bold">Jobs</a>
+            <a href="/show-courses" class="ml-20 font-bold">Courses</a>
+            <a href="" class="ml-20 font-bold">Help</a>
+        </div>
+        <div class="text-gray-500 ml-[700px]"><a href="login-page">For Employers</a></div>
+    </nav>
+
+    <div class="ml-[500px] mt-10">
+        <p class="" style="font-size: 40px; font-weight: 700;">Find your dream job now</p>
+        <p font-size1 class="ml-28 mt-2">5 lakh+ jobs for you to explore</p>
+    </div>
+
+    <div class="bg-white w-[830px] ml-80 mt-12 rounded-full">
+        <form action="/search-job-data" method="post">
+            <div class="flex items-center">
+                <div class="icon"><img src="https://static.naukimg.com/s/7/103/i/search.57b43584.svg" class="ml-4"
+                        alt=""></div>
+                <input
+                    class="border border-gray-300 font-bold text-gray-500 pl-[10px] w-[675px] h-[65px] rounded-full border-white placeholder:pl-4 leading-tight focus:outline-none focus:shadow-outline placeholder:text-gray-400 placeholder:font-semibold"
+                    name="searchtext" placeholder="Enter Skills / designations / companies" type="search">
+                <div class="bg h-fit p-7 py-2 bg-indigo-700 text-white font-bold rounded-full">
+                    <button>Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="mt-20 max-w-screen-2xl h-screen flex flex-wrap">
+
+        <% if(list.length>0){ %>
+            <% for (let i=0;i<list.length;i++) {%>
+                <a href="job_descreption?id=<%- list[i].job_id %>" class="mb-8 ml-[12px]">
+                    <div
+                        class="ml-10 h-auto md:w-[240px] w-[200px] py-3 px-3 flex-col rounded-md bg-white hover:bg-slate-200">
+                        <div class="flex justify-center">
+                            <img class="h-30 w-30 rounded-lg" src="<%- list[i].image  %>" alt="">
+                        </div>
+                        <div class="flex justify-center">
+                        </div>
+                        <div class="flex flex-col">
+
+                            <div class="flex justify-center items-center">
+                                <p class="flex font-extrabold"><%-list[i].job_title%></p>
+                            </div>
+
+                            <div class="">
+                                <div class="flex pt-3">
+                                    <p class="font-semibold">Company : </p>
+                                    <P class="font-bold"> <%-list[i].company%></P>
+                                </div>
+                                <p class="text-gray-700 pt-1">Location : <%-list[i].Location%></p>
+                                <p class="pt-1">Vaccency : <%-list[i].vacancy%> seats</p>
+                                <div class="flex items-center gap-2 my-4">
+                                    <img class="w-5 h-5" src="icon_week_32.png" alt="img">
+                                    <p class="text-xs text-red-600">Apply till : <%-list[i].last_date%></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <% } %>
+
+                    <% } else { %>
+                        <p style="font-size: 40px; color: blue; margin-left: 620px; margin-top: 100px;">Not Found!!</p>
+                        <% } %>
+    </div>
+
+    </div>
+
+    <footer class="bg-gray-400 text-white">
+        <div class="foot-pannel1  h-20 flex justify-center items-center bg-gray-700 rounded-xl">
+            <a href="#" class="text-black font-bold">Back to Top</a>
+        </div>
+
+        <div class="foot-pannel2 bg-gray-600 h-72  flex justify-around items-start py-4">
+            <ul class="mr-10">
+                <p class="text-blue-300">Get to Know Us</p>
+                <a href="#" class="block text-blue-300 hover:text-blue-200">Careers</a>
+                <a href="#" class="block text-blue-300 hover:text-blue-200">Blog</a>
+                <a href="#" class="block text-blue-300 hover:text-blue-200">About Amazon</a>
+                <a href="#" class="block text-blue-300 hover:text-blue-200">Investor Relations</a>
+                <a href="#" class="block text-blue-300 hover:text-blue-200">Amazon Devices</a>
+                <a href="#" class="block text-blue-300 hover:text-blue-200">Amazon Science</a>
+            </ul>
+            <ul class="mr-10">
+                <p class="text-blue-300">Get to Know Us</p>
+                <a href="#" class="block text-blue-300 hover:text-blue-200">Careers</a>
+                <a href="#" class="block text-blue-300 hover:text-blue-200">Blog</a>
+                <a href="#" class="block text-blue-300 hover:text-blue-200">About Amazon</a>
+                <a href="#" class="block text-blue-300 hover:text-blue-200">Investor Relations</a>
+                <a href="#" class="block text-blue-300 hover:text-blue-200">Amazon Devices</a>
+                <a href="#" class="block text-blue-300 hover:text-blue-200">Amazon Science</a>
+            </ul>
+            <ul class="mr-10">
+                <p class="text-blue-300">Get to Know Us</p>
+                <a href="#" class="block text-blue-300 hover:text-blue-200">Careers</a>
+                <a href="#" class="block text-blue-300 hover:text-blue-200">Blog</a>
+                <a href="#" class="block text-blue-300 hover:text-blue-200">About Amazon</a>
+                <a href="#" class="block text-blue-300 hover:text-blue-200">Investor Relations</a>
+                <a href="#" class="block text-blue-300 hover:text-blue-200">Amazon Devices</a>
+                <a href="#" class="block text-blue-300 hover:text-blue-200">Amazon Science</a>
+            </ul>
+            <ul class="mr-10">
+                <p class="text-blue-300">Get to Know Us</p>
+                <a href="#" class="block text-blue-300 hover:text-blue-200">Careers</a>
+                <a href="#" class="block text-blue-300 hover:text-blue-200">Blog</a>
+                <a href="#" class="block text-blue-300 hover:text-blue-200">About Amazon</a>
+                <a href="#" class="block text-blue-300 hover:text-blue-200">Investor Relations</a>
+                <a href="#" class="block text-blue-300 hover:text-blue-200">Amazon Devices</a>
+                <a href="#" class="block text-blue-300 hover:text-blue-200">Amazon Science</a>
+            </ul>
+
+            <!-- Repeat the above ul for the other panels if needed -->
+
+        </div>
+
+        <div
+            class="foot-pannel3 bg-gray-600 text-center border-t border-gray-100 h-32 flex justify-center items-center">
+            <div class="font-extrabold text-blue-700  flex items-center">
+                <img src="naukri_gnb_logo.svg" alt="">
+            </div>
+        </div>
+
+        <div class="foot-pannel4 bg-gray-600 text-white text-center py-4">
+            <div class="page">
+                <a href="#" class="text-blue-300 hover:text-blue-200">Conditions of Use</a>
+                <a href="#" class="text-blue-300 hover:text-blue-200">Privacy Notice</a>
+                <a href="#" class="text-blue-300 hover:text-blue-200">Your Ads Privacy Choices</a>
+            </div>
+            <div class="copyright">
+                © 1996-2024, Amazon.com, Inc. or its affiliates
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

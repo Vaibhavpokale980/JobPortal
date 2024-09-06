@@ -1,0 +1,167 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style4.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="body-bg">
+    <form action="/check-login-data-user" method="post">
+        <div class="main">
+            <div class="admin-login">
+                <p class="admin1"><a class="anchor" href="/login-page">Admin</a></p>
+            </div>
+            
+            <div class="login-login">
+                <h1 class="heading">Login</h1>
+                <input id="username" class="box box1" type="text" name="username" placeholder="Username">
+
+                <div class="password">
+                    <input id="pass1" class="box box3" name="password" type="password" placeholder="Password">
+                    <button class="eye" id="eyeid" type="button" onclick="togglepassword()">
+                        <i class="fa-solid fa-eye"></i>
+                    </button>
+                </div>
+                <button type="submit" class="submit" onclick="passmatch()">Submit</button>
+
+
+                <div class="login2">
+                    <p>Don't have an account ?</p>
+                    <a href="/"> Sign-up</a>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script>
+
+        function passmatch() {
+            let username = document.getElementById("username").value;
+            let pass1 = document.getElementById("pass1").value;
+
+            if (username == "" || pass1 == "") {
+                event.preventDefault();
+                alert("All fields are not filled");
+            }
+        }
+
+
+        function togglepassword() {
+            let password = document.getElementById("pass1");
+
+            if (password.type === "password") {
+                password.type = "text";
+            }
+            else if (password.type === "text") {
+                password.type = "password";
+            }
+        }
+    </script>
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Add the Play CDN script to your HTML-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--Custom style sheet-->
+    <link rel="stylesheet" href="./style6.css">
+
+    <title>Login Screen</title>
+</head>
+
+<body>
+    <section class="bg-gray-50 min-h-screen flex items-center justify-center">
+        <!--Login container-->
+        <div class="bg-[#7ad3f62a] flex rounded-2xl shadow-lg max-w-3xl p-4">
+            <!--Form-->
+            <div class="sm:w-1/2 px-16">
+                <h2 class="font-bold text-2xl text-[#4527a5] text-center">Login</h2>
+                <p class="text-sm mt-7 text-[#6c57b1] text-opacity-70 text-center">If you already a member, easily
+                    log
+                    in</p>
+
+                <!--Data entry group-->
+                <form class="flex flex-col gap-4" action="/check-login-data-user" method="post">
+                    <input class="p-2 mt-8 rounded-xl border" type="text" id="username" name="username"
+                        placeholder="Your username">
+                    <div class="relative">
+                        <input class="p-2 mt-8 rounded-xl border w-full" type="password" id="pass1" name="password"
+                            placeholder="Your password">
+
+                        <!--SVG Eye-->
+                        <svg class="bi bi-eye-fill absolute top-1/2 right-4 
+                    translate-y-1/2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"
+                            viewBox="0 0 16 16" id="eyeid" onclick="togglepassword()">
+                            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                            <path
+                                d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+                        </svg>
+                    </div>
+
+                    <button class="Login-button rounded-xl font-bold text  py-2" onclick="passmatch()">Login</button>
+                </form>
+
+                <div class="mt-10 grid grid-cols-3 items-center text-gray-400">
+                    <hr class="border-gray-400">
+                    <p class="text-center text-sm">OR</p>
+                    <hr class="border-gray-400">
+                </div>
+
+                <button class="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center text-sm">
+                    <img class="w-6 mr-3" src="google_logo_icon.png" alt="">
+                    Login with Google
+                </button>
+
+                <p class="mt-5 text-xs border-b border-gray-400 py-4">
+                    <a href="">Forgot Your password?</a>
+                </p>
+
+                <div class="mt-3 text-xs flex justify-between items-center">
+                    <p>
+                        <a href="/signup-page-user">Don't have an account?</a>
+                    </p>
+                    <button class="py-2 px-5 bg-white border rounded-xl"><a href="/signup-page-user">Registor</a></button>
+                </div>
+            </div>
+
+            <div class="sm:block hidden w-1/2">
+                <img class="sm:block hidden rounded-2xl" src="login.jpeg" alt="img-login">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function passmatch() {
+            let username = document.getElementById("username").value;
+            let pass1 = document.getElementById("pass1").value;
+
+            if (username == "" || pass1 == "") {
+                event.preventDefault();
+                alert("All fields are not filled");
+            }
+        }
+
+        function togglepassword() {
+            let password = document.getElementById("pass1");
+
+            if (password.type === "password") {
+                password.type = "text";
+            } else if (password.type === "text") {
+                password.type = "password";
+            }
+        }
+    </script>
+</body>
+
+</html>

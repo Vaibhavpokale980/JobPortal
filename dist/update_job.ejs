@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="style5.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <div class="flex justify-center items-center h-screen bg-gray-100">
+        <form action="/update-job-data?id=<%= id %>" method="post" class="bg-white p-8 rounded-lg shadow-lg w-1/2">
+            <input type="text" class="bg-gray-50 text-gray-800 placeholder-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md border border-gray-300 px-4 py-2 mb-4 w-full" name="title" id="" placeholder="Title" value="<%- list[0].job_title %>" required>
+            <input type="text" class="bg-gray-50 text-gray-800 placeholder-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md border border-gray-300 px-4 py-2 mb-4 w-full" name="company" id="" placeholder="Company" value="<%- list[0].company %>" required>
+            <input type="text" class="bg-gray-50 text-gray-800 placeholder-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md border border-gray-300 px-4 py-2 mb-4 w-full" name="vacancy" id="" placeholder="Vacancy" value="<%- list[0].vacancy %>" required>
+            <input type="text" class="bg-gray-50 text-gray-800 placeholder-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md border border-gray-300 px-4 py-2 mb-4 w-full" name="image" id="" placeholder="Image" value="<%- list[0].image %>" required>
+            <input type="text" class="bg-gray-50 text-gray-800 placeholder-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md border border-gray-300 px-4 py-2 mb-4 w-full" name="location" id="" placeholder="Location" value="<%- list[0].location %>" required>
+            <input type="text" class="bg-gray-50 text-gray-800 placeholder-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md border border-gray-300 px-4 py-2 mb-4 w-full" name="lastdate" id="" placeholder="DD/MM/YYYY" value="<%- list[0].last_date %>" required>
+            <input type="text" class="bg-gray-50 text-gray-800 placeholder-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md border border-gray-300 px-4 py-2 mb-4 w-full" name="descre" id="" placeholder="Description" value="<%- list[0].descri %>" required>
+            <input type="text" class="bg-gray-50 text-gray-800 placeholder-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md border border-gray-300 px-4 py-2 mb-4 w-full" name="experi" id="" placeholder="Experience" value="<%- list[0].experi %>" required>
+            <input type="text" class="bg-gray-50 text-gray-800 placeholder-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md border border-gray-300 px-4 py-2 mb-4 w-full" name="salary" id="" placeholder="Salary" value="<%- list[0].salary %>" required>
+            <input type="text" class="bg-gray-50 text-gray-800 placeholder-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md border border-gray-300 px-4 py-2 mb-4 w-full" name="additional" id="" placeholder="Additional Info" value="<%- list[0].additional %>" required>
+            <div class="flex justify-between items-center">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded hover:text-green-500">Update</button>
+            <a href="/" class="block  text-center bg-gray-400 hover:bg-gray-600 text-black font-bold py-2 px-4 rounded mt-4">Go back</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

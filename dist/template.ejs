@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show Resume</title>
+</head>
+
+<body>
+  <script>
+    // Define the URL of the resume
+    var resumeLink = "<%= resume %>";
+    
+    // Function to redirect to the resume page
+    function redirectToResume() {
+      window.location.href = resumeLink; // Redirect to the resume URL
+    }
+
+    // Call the function to redirect
+    redirectToResume();
+
+  </script>
+</body>
+
+</html>
