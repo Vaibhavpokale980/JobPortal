@@ -11,10 +11,10 @@
 <body class="bg-slate-950">
     <div class="cont h-full max-w-2xl ml-10 flex flex-col">
         <% for(let i=0;i<5;i++){ %>
-            <a href="/video?<%- list[0].id %>">
+            <a href="/video?<%- list._id %>">
                 <div class="card w-[850px] h-[180px] bg-white rounded-xl flex mt-10">
                     <div class="video">
-                        <iframe class="w-[280px] h-[180px] rounded-lg" src="<%- list[0].url %>">
+                        <iframe class="w-[280px] h-[180px] rounded-lg" src="<%- list.url %>">
                         </iframe>
                     </div>
                     <div class="info p-4 pr-0">

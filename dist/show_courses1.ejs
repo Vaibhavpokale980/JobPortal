@@ -31,7 +31,7 @@
 
             <% if(list.length>0){ %>
                 <% for (let i=0;i<list.length;i++) {%>
-                    <a href="/get-list-course?id=<%- list[i].ID %>" class="mb-8">
+                    <a href="/get-list-course?id=<%- list[i]._id %>" class="mb-8">
                         <div
                             class="ml-10 h-auto md:w-[240px] w-[200px] py-3 px-3 flex-col rounded-md bg-white hover:bg-slate-200">
                             <div class="flex justify-center">
@@ -40,7 +40,7 @@
                             <div class="flex flex-col">
 
                                 <div class="flex justify-center items-center">
-                                    <p class="flex font-extrabold"><%- list[i].course_name %></p>
+                                    <p class="flex font-extrabold"><%- list[i].coursename %></p>
                                 </div>
 
                                 <div class="">
