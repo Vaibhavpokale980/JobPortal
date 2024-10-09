@@ -34,7 +34,7 @@ app.use(bodyparser.urlencoded({ extended: true })); //--
 // console.log(process.env.PORT,"mich"); // Outputs 3000
 
 
-mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGODB_CONNECT_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
